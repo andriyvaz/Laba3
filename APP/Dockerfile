@@ -3,6 +3,6 @@ COPY . /footgo
 WORKDIR /footgo
 RUN mvn clean package -Dmaven.test.skip=true
 FROM openjdk:8-jre-alpine
-COPY --from=builder /footgo/target/ROOT.jar /footgo/
+COPY --from=builder /footgo/target/ROOT.jar /
 ENTRYPOINT java -jar ROOT.jar
 
